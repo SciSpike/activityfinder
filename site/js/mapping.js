@@ -5,46 +5,55 @@ steal('jquery/class',
       'jquery/dom/fixture',
       function($){
 
-  $.Model('Todo',{
-    findAll : "GET /todos",
-    findOne : "GET /todos/{id}",
-    create  : "POST /todos",
-    update  : "PUT /todos/{id}",
-    destroy : "DELETE /todos/{id}"
+  $.Model('Activity',{
+    findAll : "GET /activities",
+    findOne : "GET /activities/{id}",
+    create  : "POST /activities",
+    update  : "PUT /activities/{id}",
+    destroy : "DELETE /activities/{id}"
   },
   {})
   
   
   
   // our list of todos
-var TODOS = [
-    {id: 1, name: "wake up"},
-    {id: 2, name: "take out trash"},
-    {id: 3, name: "do dishes"}
+var ACTIVITIES = [
+    {
+		id: 0,
+		time: "5:00 pm",
+		day: 'Friday',
+		suburb: null,
+		city: 'Oak park',
+		zipcode: '60302',
+		involvement: 'participation',
+		type: 'sport',
+		activity: 'golf',
+		description: 'Need a 4th for golf'
+	}
 ];
 // findAll
-$.fixture("GET /todos", function(){
-  return [TODOS]
+$.fixture("GET /activities", function(){
+  return [ACTIVITIES]
 });
 
 // findOne
-$.fixture("GET /todos/{id}", function(orig){
-  return TODOS[(+orig.data.id)-1];
+$.fixture("GET /activities/{id}", function(orig){
+  return ACTIVITIES[(+orig.data.id)-1];
 })
 
 // create
 var id= 4;
-$.fixture("POST /todos", function(){
+$.fixture("POST /activities", function(){
   return {id: (id++)}
 })
 
 // update
-$.fixture("PUT /todos/{id}", function(){
+$.fixture("PUT /activities/{id}", function(){
   return {};
 })
 
 // destroy
-$.fixture("DELETE /todos/{id}", function(){
+$.fixture("DELETE /activities/{id}", function(){
   return {};
 })
 
@@ -158,7 +167,7 @@ new Tooltip( $('<div>INFO</div>').appendTo(el) )*/
 
 
 
-$.Controller("Todos",{
+/*$.Controller("Todos",{
   "init" : function( element , options ){
     this.element.html('todos.ejs', Todo.findAll() )
   },
@@ -246,7 +255,7 @@ $.Controller("Routing",{
 });
 
 // create routing controller
-new Routing(document.body);
+new Routing(document.body);*/
 				  
 
 
