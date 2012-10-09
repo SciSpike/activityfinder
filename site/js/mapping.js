@@ -2,101 +2,155 @@ steal('jquery/class',
       'jquery/controller',
       'jquery/model',
       'jquery/view/ejs',
-      'jquery/dom/fixture',
+      'jquery/dom/fixture')
+	  .then(
+	  'js/activityModel.js',
       function($){
 
-  $.Model('Activity',{
-    findAll : "GET /activities",
-    findOne : "GET /activities/{id}",
-    create  : "POST /activities",
-    update  : "PUT /activities/{id}",
-    destroy : "DELETE /activities/{id}"
-  },
-  {})
-  
-  
-  
-  // our list of todos
-var ACTIVITIES = [
-    {
-		id: 0,
-		time: "5:00 pm",
-		day: 'Friday',
-		suburb: null,
-		city: 'Oak park',
-		zipcode: '60302',
-		involvement: 'participation',
-		type: 'sport',
-		activity: 'golf',
-		description: 'Need a 4th for golf'
-	}
-];
-// findAll
-$.fixture("GET /activities", function(){
-  return [ACTIVITIES]
-});
+		// THE CONTROLLER SETS UP LISTENER FUNCTIONS, CALLS VIEWS AND SETS UP EVENTS
+		$.Controller("Activities",{
+		  "init" : function( element , options ){
+			  //var activities = Activity.findAll();
+			this.element.append('js/activityListView.ejs', Activity.findAll() )
+		  },
+		  "{Activity} created" : function(Activity, ev , activity){
+			this.element.append('js/activityListView.ejs', [activity])
+		  },
+		  "{Activity} updated" : function(Activity, ev , activity){
+			this.element.append('js/activityListView.ejs', [activity])
+		  },
+			submit : function(el, ev){
+			  ev.preventDefault();
+			  this.element.find('[type=submit]').val('Creating...');
+			  new Activities(el.formParams()).save(this.callback('saved'));
+			},
+			saved : function(){
+			  this.element.find('[type=submit]').val('Create');
+			  this.element[0].reset();
+			}
+		})
+		
+		// INITIALIZE ON PAGE LOAD
+		new Activities('#activityList', {});
+		
+		
+		
+		// CREATE A NEW ACTIVITY
+		var singleActivity = new Activity({
+			id: 2,
+			title: 'Surfing Today',
+			time: "2:00 pm",
+			day: 'Wednesday',
+			suburb: 'Sumner',
+			city: 'Christchurch',
+			zipcode: '8081',
+			involvement: 'independent',
+			type: 'sport',
+			activity: 'surfing',
+			description: 'time for a wave'
+		})
+		
+		// SAVE THE NEW ACTIVITY
+		singleActivity.save();
 
-// findOne
-$.fixture("GET /activities/{id}", function(orig){
-  return ACTIVITIES[(+orig.data.id)-1];
+
+
+
+
+
+/*Activity.findAll({}, function( activities ) {
+  console.log( activities );
 })
 
-// create
-var id= 4;
-$.fixture("POST /activities", function(){
-  return {id: (id++)}
+Activity.findOne({}, function( activity ) {
+  console.log( activity );
+})*/
+
+/*var singleActivity = new Activity({
+	id: 1,
+	time: "2:00 pm",
+	day: 'Wednesday',
+	suburb: 'Sumner',
+	city: 'Christchurch',
+	zipcode: '8081',
+	involvement: 'independent',
+	type: 'sport',
+	activity: 'surfing',
+	description: 'surfing comp on this Wednsday evening'
 })
 
-// update
-$.fixture("PUT /activities/{id}", function(){
-  return {};
-})
+singleActivity.save();
 
-// destroy
-$.fixture("DELETE /activities/{id}", function(){
-  return {};
-})
+Activity.findAll({}, function( activities ) {
+  console.log( activities );
+})*/
 
-/*Todo.findAll({}, function( todos ) {
-  console.log( todos );
-})
 
-Todo.findOne({}, function( todo ) {
-  console.log( todo );
-})
 
-var todo = new Todo({name: "mow lawn"})
-todo.save(function(todo){
-  console.log( todo );
-})
 
-var todo = new Todo({name: "mow lawn"});
-todo.save( function(todo){
-  console.log("created", todo );
 
-  todo.attr("name", "mow my lawn")
-  todo.save( function( todo ) {
-    console.log("updated", todo );
+
+
+
+
+
+
+/*var singleActivity = {
+	id: 1,
+	title: 'Surfing Comp',
+	time: "2:00 pm",
+	day: 'Wednesday',
+	suburb: 'Sumner',
+	city: 'Christchurch',
+	zipcode: '8081',
+	involvement: 'independent',
+	type: 'sport',
+	activity: 'surfing',
+	description: 'surfing comp on this Wednsday evening'
+}
+
+
+
+var newActivity = new Activity(singleActivity);
+newActivity.save(function(newActivity){
+  console.log( newActivity );
+})*/
+
+
+
+
+
+
+
+
+
+
+
+/*var singleActivity = new Activity({name: "mow lawn"});
+singleActivity.save( function(singleActivity){
+  console.log("created", singleActivity );
+
+  singleActivity.attr("name", "mow my lawn")
+  singleActivity.save( function( singleActivity ) {
+    console.log("updated", singleActivity );
   })
 })
 
-var todo = new Todo({name: "mow lawn"});
-todo.save( function(todo){
-  console.log("created", todo );
+singleActivity.save( function(singleActivity){
+  console.log("created", singleActivity );
 
-  todo.destroy( function( todo ) {
-    console.log("destroyed", todo );
+  singleActivity.destroy( function( singleActivity ) {
+    console.log("destroyed", singleActivity );
   })
 })
 
-var todo = new Todo({name: "mow lawn"});
-todo.bind('created', function(ev, todo){
-  console.log("created", todo );
+singleActivity.bind('created', function(ev, singleActivity){
+  console.log("created", singleActivity );
 })
-todo.save();
+singleActivity.save();
 
-Todo.bind('created', function(ev, todo){
-  console.log("created", todo );
+Activity.bind('created', function(ev, singleActivity){
+  console.log("created", singleActivity );
 })*/
 
 
@@ -116,6 +170,16 @@ console.log(li.model().id);
 });
 
 $('#todos').html('todos.ejs', Todo.findAll() )*/
+
+
+
+
+
+
+
+
+
+
 
 /*$.Controller("Todos",{
   "init" : function( element , options ){

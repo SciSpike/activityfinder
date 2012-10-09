@@ -416,8 +416,12 @@ div.ui-slider-switch{
 		padding:0 10px;
 		display:block;
 		overflow:auto;
-		height:115px;
+		/*height:115px;*/
 		position:relative;
+   }
+   #activityList .activity .activityDetails{
+		display:block;
+		min-height: 115px; 
    }
    #activityList .activity img, .listContent{
 		float:left; 
