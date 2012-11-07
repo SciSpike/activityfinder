@@ -1,0 +1,481 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+a {
+    color: #00e;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover {
+    color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+    position: absolute;
+    left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+
+.ir br {
+    display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+
+
+/* ==========================================================================
+   Over-write Jquery Mobile Styles
+   ========================================================================== */
+
+.ui-body-c, .ui-dialog.ui-overlay-c {
+	background:#FFFFFF;
+}
+
+input.ui-input-text, textarea.ui-input-text {
+	margin:0 0 10px 0;	
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+	margin:0;
+	line-height:40px;
+}
+
+.ui-bar-a {
+	background:url(../img/navBar.png) repeat-x top left;
+	border:none;
+}
+
+.ui-btn-block, .greenBtn{
+	background:url(../img/greenBtn.png) repeat-x top left;
+}
+.select .ui-btn{
+	background:none;
+}
+
+.ui-btn-inner, .greenBtn{
+	line-height:30px;
+	padding:0;
+	border:none;
+	color:#FFF;
+}
+
+.ui-btn-block, .ui-btn-hover-c, .greenBtn, .shadowText {
+	color:#FFF;
+	font-weight:normal;
+	text-shadow: 0 0 4px black;
+	font-size:18px;
+}
+
+.ui-select .ui-btn-up-c, .ui-select .ui-btn-hover-c, .ui-selectmenu-list .ui-btn-hover-c{
+	color:#CCC;
+	font-weight:normal;
+	text-shadow: 0 0 0 black;
+	font-size:18px;
+}
+
+.ui-select .ui-btn-inner{
+	line-height:30px;
+	padding:0;
+	border:none;
+	color:#AAA;
+	text-align:left;
+	padding-left:5px;
+}
+
+.ui-btn-corner-all, .ui-corner-all{
+	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  	border-radius: 5px;
+}
+
+.ui-body-c, .ui-overlay-c {
+	color:#aaa;
+}
+
+.ui-body-c .ui-link, .ui-body-c .ui-link:visited{
+	color:#FFF;
+	font-weight:normal;
+}
+
+.ui-body-c, .ui-overlay-c{
+	text-shadow:none;	
+}
+
+label.ui-slider {
+	float:left;
+	margin: 10px 10px 0 0;
+}
+
+div.ui-slider-switch{
+	margin-bottom:10px;	
+}
+
+.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+	margin: 10px 0;
+}
+
+.ui-field-contain, fieldset.ui-field-contain {
+	border-width: 0;
+}
+
+
+
+/* ==========================================================================
+   Peter's Styles
+   ========================================================================== */
+   
+   #wrapper{
+		margin:0 auto;
+		width:95%;
+		background:#FFF; 
+   }
+   #wrapper.listView, #wrapper.mapView{
+	   width:100%;
+   }
+   #wrapper.actDetails{
+		background:url(../img/sportIcons.png) repeat-x top center;
+		min-height:100px;
+		width:100%;
+   }
+    .actDetails .content{
+		padding-top:70px;
+		width:95%;
+		margin:0 auto;
+	}
+	.actDetails .content a{
+		display:block;
+		position:relative;
+		color:#FFF;
+		font-weight:normal;
+		font-size:11px;
+	}
+	.actDetails .content a .more{
+		position:absolute;
+		top:5px;
+		right:10px;
+	}
+   li{
+		text-indent:0;
+		list-style:none;   
+   }
+   a{
+		text-decoration:none;   
+   }
+   .ui-header span{
+		line-height:40px;
+		margin-left:10px;
+		background:url(../img/backNavBtn.png) no-repeat center left;
+		width:72px;
+		text-align:center;
+		font-size:11px;
+		padding-left:5px;
+   }
+   form{
+		margin:10px 0;   
+   }
+   input{
+	   margin-bottom:10px;
+	   -moz-border-radius: 5px;
+  		-webkit-border-radius: 5px;
+  		border-radius: 5px;
+		color:#aaa;
+   }
+   .left{
+		float:left;   
+   }
+   .right{
+		float:right;   
+   }
+   .imgUpload{
+		width:5%;
+   }
+   .wrapInput input{
+	   width:80%;
+   }
+   .greenBtn{
+	   display:block;
+	   text-align:center;
+	   margin-bottom:5px;
+	   -moz-border-radius: 5px;
+  		-webkit-border-radius: 5px;
+  		border-radius: 5px;
+   }
+   .textLeft{
+	   text-align:left;
+	   padding-left:10px;
+   }
+   .textRight{
+	   text-align:right;
+	   padding-right:10px;
+   }
+   h1, h2, h3, h4, h5, h6{
+		text-align:center;
+		margin-bottom:10px; 
+   }
+   #siteTitle{
+		line-height:150px;
+		font-size:24px; 
+		color:#4eae3f; 
+   }
+   .ui-selectmenu-hidden{
+		display:none;   
+   }
+   #time_dummy{
+		width:30%;
+		display:inline;  
+		color:#aaa;
+   }
+   #day_dummy{
+		width:70%;
+		display:inline;
+		color:#aaa;  
+   }
+   #activityList .activity{
+		background:url(../img/rightArrow.png) no-repeat top right, url(../img/listBkgd.png) repeat-x top left;
+		padding:0 10px;
+		display:block;
+		overflow:auto;
+		/*height:115px;*/
+		position:relative;
+   }
+   #activityList .activity .activityDetails{
+		display:block;
+		min-height: 115px; 
+   }
+   #activityList .activity img, .listContent{
+		float:left; 
+		margin:25px 0 0 10px;
+   }
+   .listContent{
+		width:75%;   
+   }
+   .distance{
+		position:absolute;
+		top:10px;
+		right:10px;   
+   }
+   .radius{
+		margin:30px 0;   
+   }
+   
+   /* #################### VERTICAL CENTERING ####################*/
+   
+  #floater	{float:left; height:50%; margin-bottom:-120px;}
+	.verticalCenter {clear:both; height:240px; position:relative;}
+	
+	#outer {overflow: hidden; position: relative;}
+#outer[id] {display: table; position: static;}
+
+#middle {position: absolute; top: 50%;} /* for explorer only*/
+#middle[id] {display: table-cell; vertical-align: middle; width: 95%;}
+
+#inner {position: relative; top: -50%} /* for explorer only */
+/* optional: #inner[id] {position: static;} */
+
+
+
+
+/* #################### MAP ####################*/
+
+#map{
+	width:320px;
+	height:440px;	
+}
+
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}

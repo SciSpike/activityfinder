@@ -1,0 +1,29 @@
+// THE INITIAL ARRAY OF ACTIVITIES
+	var ACTIVITIES = [
+		{
+			id: 0,
+			title: 'Golf Evening',
+			time: "5:00 pm",
+			day: 'Friday',
+			suburb:  null,
+			city: 'Oak park',
+			zipcode: '60302',
+			involvement: 'participation',
+			type: 'sport',
+			activity: 'golf',
+			description: 'Need a 4th for golf'
+		},
+		{
+			id: 1,
+			title: 'Surfing Comp',
+			time: "2:00 pm",
+			day: 'Wednesday',
+			suburb: 'Sumner',
+			city: 'Christchurch',
+			zipcode: '8081',
+			involvement: 'independent',
+			type: 'sport',
+			activity: 'surfing',
+			description: 'this Wednsday evening'
+		}
+	];
